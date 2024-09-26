@@ -45,6 +45,42 @@
 
 
 
+        <h3>Завдання 4: Вибір поля radio і зміна зображення</h3>
+        <form>
+            <label><input type="radio" name="image" value="img1" onclick="showImage('img1')"> Варіант 1</label><br>
+            <label><input type="radio" name="image" value="img2" onclick="showImage('img2')"> Варіант 2</label><br>
+            <label><input type="radio" name="image" value="img3" onclick="showImage('img3')"> Варіант 3</label><br>
+            <label><input type="radio" name="image" value="img4" onclick="showImage('img4')"> Варіант 4</label><br>
+            <label><input type="radio" name="image" value="img5" onclick="showImage('img5')"> Варіант 5</label><br>
+        </form>
+        <img id="dynamicImage" src="" alt="Вибране зображення" width="400" height="auto" style="display: none;">
+
+
+        <h3>Завдання 5: Статичне меню з гіперпосиланнями</h3>
+        <p>
+            Використовуючи 
+            оброблювачі подій, передбачити зміну кольору гіперпосилань при приміщенні на 
+            них курсору.
+        </p>
+        <nav>
+            <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">Python</a><br>
+            <a href="https://uk.wikipedia.org/wiki/C%2B%2B" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">C++</a><br>
+            <a href="https://uk.wikipedia.org/wiki/JavaScript" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">JavaScript</a>
+        </nav>
+
+
+        <h3>Завдання 6: Меню з елемента select</h3>
+        <form>
+            <select id="pageSelect" onchange="changePage()">
+                <option value="">Оберіть сторінку</option>
+                <option value="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</option>
+                <option value="https://uk.wikipedia.org/wiki/C%2B%2B">C++</option>
+                <option value="https://uk.wikipedia.org/wiki/JavaScript">JavaScript</option>
+            </select>
+        </form>
+
+
+
         <!-- JavaScript -->
         <script>
             // Завдання 1: Визначити тип і версію браузера
@@ -88,6 +124,42 @@
             function shrinkImage() {
                 document.getElementById("image").style.width = "200px";
                 document.getElementById("image").style.height = "auto";
+            }
+
+
+            // Завдання 4: Вибір radio і зміна зображення
+            function showImage(img) {
+                let imgUrl = "";
+                switch (img) {
+                    case 'img1':
+                        imgUrl = "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg";
+                        break;
+                    case 'img2':
+                        imgUrl = "https://cdn.pixabay.com/photo/2015/04/19/08/32/marguerite-729510_640.jpg";
+                        break;
+                    case 'img3':
+                        imgUrl = "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_1280.jpg";
+                        break;
+                    case 'img4':
+                        imgUrl = "https://thumbs.dreamstime.com/b/tropical-island-sand-beach-exotic-travel-background-landscape-35213632.jpg";
+                        break;
+                    case 'img5':
+                        imgUrl = "https://i0.wp.com/picjumbo.com/wp-content/uploads/beautiful-autumn-nature-with-a-river-in-the-middle-of-the-forest-free-image.jpeg?w=600&quality=80";
+                        break;
+                }
+                document.getElementById("dynamicImage").src = imgUrl;
+                let dynamicImage = document.getElementById("dynamicImage");
+                dynamicImage.src = imgUrl;
+                dynamicImage.style.display = "block";
+            }
+
+
+            // Завдання 6: Перехід на сторінку при виборі з select
+            function changePage() {
+                let selectedPage = document.getElementById("pageSelect").value;
+                if (selectedPage) {
+                    window.location.href = selectedPage;
+                }
             }
         
         </script>
