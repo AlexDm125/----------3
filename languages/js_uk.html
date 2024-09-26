@@ -8,95 +8,84 @@
 </head>
 <body>
     <header>
-        <h1>Історія обчислювальної техніки</h1>
+        <h1>History of Computing Technology</h1>
         <nav>
             <ul>
-                <li><a href="../index.html">Головна</a></li>
-                <li><a href="history.html">Історія</a></li>
-                <li><a href="inventions.html">Винаходи</a></li>
-                <li><a href="pioneers.html">Піонери</a></li>
-                <li><a href="types.html">Типи техніки</a></li>
-                <li><a href="future.html">Майбутнє</a></li>
+                <li><a href="../index.html">Home</a></li>
+                <li><a href="history.html">History</a></li>
+                <li><a href="inventions.html">Inventions</a></li>
+                <li><a href="pioneers.html">Pioneers</a></li>
+                <li><a href="types.html">Types of Technology</a></li>
+                <li><a href="future.html">Future</a></li>
                 <li><a href="js.html">JavaScript</a></li>
             </ul>
         </nav>
     </header>
     <section>
         <h2>JavaScript</h2>
-        <h3>Завдання 1: Визначити тип і версію браузера</h3>
-        <p>Тип браузера: <span id="browserType"></span></p>
-        <p>Версія браузера: <span id="browserVersion"></span></p>
+        <h3>Task 1: Determine Browser Type and Version</h3>
+        <p>Browser Type: <span id="browserType"></span></p>
+        <p>Browser Version: <span id="browserVersion"></span></p>
     
-        <h3>Завдання 2: Математичні операції</h3>
-        <p>Обчислення математичних операцій на екрані:</p>
+        <h3>Task 2: Mathematical Operations</h3>
+        <p>Performing mathematical operations on screen:</p>
         <script>
             let a = 10;
             let b = 5;
-            document.write("Сума: 10+5 = " + (a + b) + "<br>");
-            document.write("Різниця: 10-5 = " + (a - b) + "<br>");
-            alert("Множення: 10*5 = " + (a * b));
-            alert("Ділення: 10/5 = " + (a / b));
+            document.write("Sum: 10+5 = " + (a + b) + "<br>");
+            document.write("Difference: 10-5 = " + (a - b) + "<br>");
+            alert("Multiplication: 10*5 = " + (a * b));
+            alert("Division: 10/5 = " + (a / b));
         </script>
-
-        <h3>Завдання 3: Збільшення зображення при наведенні</h3>
-        <img id="image" src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" alt="Зображення" width="200" height="auto" 
+    
+        <h3>Task 3: Enlarge Image on Hover</h3>
+        <img id="image" src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg" alt="Image" width="200" height="auto" 
              onmouseover="enlargeImage()" onmouseout="shrinkImage()">
-        <p>Наведіть курсор на зображення, щоб збільшити його.</p>
-
-
-
-        <h3>Завдання 4: Вибір поля radio і зміна зображення</h3>
+        <p>Hover over the image to enlarge it.</p>
+    
+        <h3>Task 4: Radio Button Selection and Image Change</h3>
         <form>
-            <label><input type="radio" name="image" value="img1" onclick="showImage('img1')"> Варіант 1</label><br>
-            <label><input type="radio" name="image" value="img2" onclick="showImage('img2')"> Варіант 2</label><br>
-            <label><input type="radio" name="image" value="img3" onclick="showImage('img3')"> Варіант 3</label><br>
-            <label><input type="radio" name="image" value="img4" onclick="showImage('img4')"> Варіант 4</label><br>
-            <label><input type="radio" name="image" value="img5" onclick="showImage('img5')"> Варіант 5</label><br>
+            <label><input type="radio" name="image" value="img1" onclick="showImage('img1')"> Option 1</label><br>
+            <label><input type="radio" name="image" value="img2" onclick="showImage('img2')"> Option 2</label><br>
+            <label><input type="radio" name="image" value="img3" onclick="showImage('img3')"> Option 3</label><br>
+            <label><input type="radio" name="image" value="img4" onclick="showImage('img4')"> Option 4</label><br>
+            <label><input type="radio" name="image" value="img5" onclick="showImage('img5')"> Option 5</label><br>
         </form>
-        <img id="dynamicImage" src="" alt="Вибране зображення" width="400" height="auto" style="display: none;">
-
-
-        <h3>Завдання 5: Статичне меню з гіперпосиланнями</h3>
+        <img id="dynamicImage" src="" alt="Selected Image" width="400" height="auto" style="display: none;">
+    
+        <h3>Task 5: Static Menu with Hyperlinks</h3>
         <p>
-            Використовуючи 
-            оброблювачі подій, передбачити зміну кольору гіперпосилань при приміщенні на 
-            них курсору.
+            Using event handlers to change hyperlink colors on hover.
         </p>
         <nav>
             <a href="https://en.wikipedia.org/wiki/Python_(programming_language)" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">Python</a><br>
             <a href="https://uk.wikipedia.org/wiki/C%2B%2B" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">C++</a><br>
             <a href="https://uk.wikipedia.org/wiki/JavaScript" onmouseover="this.style.color='red'" onmouseout="this.style.color='black'">JavaScript</a>
         </nav>
-
-
-        <h3>Завдання 6: Меню з елемента select</h3>
+    
+        <h3>Task 6: Menu with Select Element</h3>
         <form>
             <select id="pageSelect" onchange="changePage()">
-                <option value="">Оберіть сторінку</option>
+                <option value="">Select a page</option>
                 <option value="https://en.wikipedia.org/wiki/Python_(programming_language)">Python</option>
                 <option value="https://uk.wikipedia.org/wiki/C%2B%2B">C++</option>
                 <option value="https://uk.wikipedia.org/wiki/JavaScript">JavaScript</option>
             </select>
         </form>
-
-
-
-        <h3>Завдання 7: Багатомовний інтерфейс</h3>
-        <p>Оберіть мову:</p>
+    
+        <h3>Task 7: Multilingual Interface</h3>
+        <p>Select a language:</p>
         <form>
             <select id="languageSelect" onchange="changeLanguage()">
-                <option value="">Оберіть мову</option>
-                <option value="js.html">Українська</option>
-                <option value="../languages/js_uk.html">Англійська</option>
+                <option value="">Select a language</option>
+                <option value="../pages/js.html">Ukrainian</option>
+                <option value="js_uk.html">English</option>
             </select>
         </form>
     
-
-        
-        <h3>Завдання 8: Випадкова інформація дня</h3>
-        <button onclick="showRandomInfo()">Показати інформацію дня</button>
+        <h3>Task 8: Display Random Daily Information</h3>
+        <button onclick="showRandomInfo()">Show Daily Information</button>
         <p id="infoDisplay"></p>
-
 
 
         <!-- JavaScript -->
@@ -189,12 +178,27 @@
                     window.location.href = selectedLanguage;
                 }
             }
-         
+        
+
+
+            // Завдання 8: Випадкова інформація дня
+            let infoArray = [
+                "Quote 1: Success comes to those who take action.",
+                "Quote 2: Failure is just an opportunity to start over.",
+                "Quote 3: Dreams don't work unless you do.",
+                "Quote 4: Life is 10% what happens to you, and 90% how you react to it.",
+                "Quote 5: The best way to predict the future is to create it."
+            ];
+
+            function showRandomInfo() {
+                let randomIndex = Math.floor(Math.random() * infoArray.length);
+                document.getElementById("infoDisplay").innerText = infoArray[randomIndex];
+            }
+                   
         </script>
-        <script src="../js/JavaScript.js"></script>
     </section>
     <footer>
-        <p>&copy; 2024 Історія обчислювальної техніки. Усі права захищені.</p>
+        <p>&copy; 2024 History of Computing Technology. All rights reserved.</p>
     </footer>
 </body>
 </html>
