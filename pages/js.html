@@ -107,21 +107,21 @@
                 let name = "Невідомий браузер";
                 let version = "Невідома версія";
 
-                if (userAgent.indexOf("Chrome") > -1) {
+                if (userAgent.indexOf("Edg") > -1) {
+                    name = "Edge";
+                    version = userAgent.match(/Edg\/([\d.]+)/)[1];
+                } else if (userAgent.indexOf("OPR") > -1 || userAgent.indexOf("Opera") > -1) {
+                    name = "Opera";
+                    version = userAgent.match(/OPR\/([\d.]+)/)[1];
+                } else if (userAgent.indexOf("Chrome") > -1 && userAgent.indexOf("Safari") > -1) {
                     name = "Chrome";
                     version = userAgent.match(/Chrome\/([\d.]+)/)[1];
                 } else if (userAgent.indexOf("Firefox") > -1) {
                     name = "Firefox";
                     version = userAgent.match(/Firefox\/([\d.]+)/)[1];
-                } else if (userAgent.indexOf("Safari") > -1) {
+                } else if (userAgent.indexOf("Safari") > -1 && userAgent.indexOf("Chrome") === -1) {
                     name = "Safari";
                     version = userAgent.match(/Version\/([\d.]+)/)[1];
-                } else if (userAgent.indexOf("Edge") > -1) {
-                    name = "Edge";
-                    version = userAgent.match(/Edg\/([\d.]+)/)[1];
-                } else if (userAgent.indexOf("OPR") > -1) {
-                    name = "Opera";
-                    version = userAgent.match(/OPR\/([\d.]+)/)[1];
                 }
 
                 return { name, version };
